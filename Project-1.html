@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Project-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1200px;
+        }
+        .container{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+       .card{
+
+           transform-style: preserve-3d;
+           min-height: 100vh;
+           width: 35rem;
+           border-radius: 30px;
+           padding: 0rem 5rem;
+           box-shadow: 0 20px 20px  rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2) ;
+       }
+       .sneaker{
+           min-height: 25vh;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background: rgb(251, 251, 252);
+
+       }
+       .sneaker img{
+           width: 10rem;
+           z-index: 2;
+           transition: all 0.75s ease-out;
+
+       }
+       .circle{
+           width: 9rem;
+           height: 9rem;
+           background: linear-gradient(#20002c, #cbb4d4);
+           position: absolute;
+           border-radius: 50%;
+           
+       }
+       .info h1{
+           font-size: 2.3rem;
+           transition: all 0.75s ease-out;
+           
+       }
+       .info h3{
+           font-size: 1.3rem;
+           padding: 2rem 0rem;
+           color: #585858;
+           font-weight: bolder;
+           transition: all 0.75s ease-out;
+
+       }
+       .sizes{
+           display: flex;
+           justify-content: space-between;
+       }
+       .sizes button{
+           padding: 0.5rem 2rem;
+           background: none;
+           border: none;
+           box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+           cursor: pointer;
+           font-weight: bold;
+           color: #585858;
+       }
+       button.active{
+           background: #585858;
+           color: white;
+       }
+       .purchase{
+           margin-top: 5rem;
+           transition: all 0.75s ease-out;
+
+       }
+       .purchase:hover{
+           background: white;
+           color: black;
+       }
+       .purchase button{
+           width: 100%;
+           padding: 1rem 0rem;
+           background: rgb(248, 98, 11);
+           border: none;
+           color: white;
+           cursor: pointer;
+           border-radius: 30px;
+           font-weight: bolder;
+       }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+     
+        <div class="card">
+            <div class="sneaker">
+                <div class="circle"></div>
+                <img src="Marvel/—Pngtree—casual shoes_5616886.png" alt="">
+            </div>
+            <div class="info">
+            <h1 class="title">Gucci-V</h1>
+            <h3>FUTURE-READY TRAINERS WITH WRAPPED BOOST FOR EXCEPTIONAL COMFORT</h3>
+            <div class="sizes">
+                <button>40</button>
+                <button>45</button>
+                <button class="active">50</button>
+                <button>55</button>
+            </div>
+            <div class="purchase">
+                <button>Purchase</button>
+            </div>
+          </div>
+        </div>
+    </div>
+<script>
+    //Movement animation to happen
+    const card = document.querySelector(".card");
+    const container = document.querySelector(".container");
+    //items
+    const title = document.querySelector('.title');
+    const sneaker = document.querySelector('.sneaker img');
+    const purchase = document.querySelector('.purchase button');
+    const description = document.querySelector('.info h3');
+    const sizes = document.querySelector('.sizes');
+
+
+
+    //Movement animation event
+    container.addEventListener('mousemove', (e) => {
+        //console.log(e.pageX, e.pageY);
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 15;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 15;
+        card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+
+    });
+    //Animate in
+    container.addEventListener('mouseenter', e => {
+        card.style.transition = "none";
+    });
+    //popout
+    title.style.transform = "translateZ(150px)";
+    sneaker.style.transform = "translateZ(200px) rootateZ(-45deg)";
+    description.style.transform = "translateZ(125px)";
+    sizes.style.transform = "translateZ(100px)";
+    purchase.style.transform = "translateZ(75px)";
+
+
+
+
+
+    //Animate out
+    container.addEventListener('mouseleave', (e) => {
+        card.style.transition = "all 0.5s ease";
+        card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    //popback
+        title.style.transform = "translateZ(0px)";
+        sneaker.style.transform = "translateZ(0px) rootateZ(0deg)";
+        description.style.transform = "translateZ(0px)";
+        sizes.style.transform = "translateZ(0px)";
+        purchase.style.transform = "translateZ(0px)";
+
+
+
+    });
+</script>
+</body>
+</html>

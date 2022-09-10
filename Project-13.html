@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-13</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: block;
+            top: 0;
+            left: 50%;
+            margin: auto;
+        }
+        body{
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #c4c3ca;
+           /* background-color: #141e30,#243b55;*/
+            overflow: hidden;
+            background: linear-gradient(#000000,#434343);
+        }
+        button{
+            margin: 15px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 200ms linear;
+        }
+        button:hover{
+            text-decoration: none;
+        }
+        p{
+            margin-top: 5px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        p:hover{
+            color: yellow;
+        }
+        h4{
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+        }
+        h6 span{
+            padding: 0 20px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 22px;
+            color: #ffeba7;
+        }
+        .section{
+            position: relative;
+            width: 100%;
+            display: block;
+        }
+        [type="checkbox"]:checked,
+        [type="checkbox"]:not(:checked){
+            position: absolute;
+            left: -9999px;
+        }
+        .checkbox:checked + label,
+        .checkbox:not(checked) +label{
+            position: relative;
+            display: block;
+            text-align: center;
+            width: 68px;
+            height: 26px;
+            border-radius: 12px;
+            padding: 0;
+            margin: 10px auto;
+            cursor: pointer;
+            background-color: #ffeba7;
+        }
+    
+        .checkbox:checked + label:before,
+        .checkbox:not(checked) + label:before{
+            position: absolute;
+            display: block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: #ffeba7;
+            background-color: #102770;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            content: '\eb4f';
+            z-index: 20;
+            top: -10%;
+            left: -10%;
+            line-height: 36px;
+            text-align: center;
+            font-size: 25px;
+            transition: all 0.5s ease;
+
+        }
+        .checkbox:checked + label:before {
+            transform: translateX(44px) rotate(-270deg);
+        }
+        .card-3d-wrap{
+            position: relative;
+            width: 440px;
+            height: 400px;
+            max-width: 100%;
+            -webkit-transform-style: preserve-3d;
+            perspective: 800px;
+            transform-style: preserve-3d;
+            margin-top: 60px;
+        }
+
+        .card-3d-wrapper{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            top: 0;
+            left: 0;
+            transition: all 600ms ease-out;
+        }
+        .card-front, .card-back{
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#304352,#d7d2cc);
+            /*background-color: #2a2b38;*/
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: 300%;
+            position: absolute;
+            border-radius: 6px;
+            top: 0;
+            left: 0;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .card-back{
+            transform: rotateY(180deg);
+        }
+        .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+            transform: rotateY(180deg);
+        }
+        .center wrap{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            padding: 0 35px;
+            transform: translate(0, -50%, 35%)  perspective(100px);
+            z-index: 20;
+            display: block;
+        }
+        .form-group{
+            position: relative;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        .form-style{
+            padding: 13px 20px;
+            margin: 3px;
+            padding-left: 55px;
+            height: 48px;
+            width: 360px;
+            font-weight: 400;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0.5px;
+            outline: none;
+            color: #c4c3ca;
+            background-color: rgb(110, 9, 9);
+            border: none;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+            box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+        }
+        .form-style:focus,
+        .form-style:active{
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+        }
+        .input-icon{
+            position: absolute;
+            top: 0;
+            left: 18px;
+            height: 48px;
+            font-size: 24px;
+            line-height: 48px;
+            text-align: left;
+            color: #ffeba7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        .form-group input :-ms-input-placeholder{
+            color: #c4c3ca;
+            opacity: 0.7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        .form-group input ::-moz-input-placeholder{
+            color: #c4c3ca;
+            opacity: 0.7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        .form-group input :-moz-input-placeholder{
+            color: #c4c3ca;
+            opacity: 0.7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        .form-group input ::-webkit-input-placeholder{
+            color: #c4c3ca;
+            opacity: 0.7;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        .form-group input:focus:-ms-input-placeholder{
+            opacity:0;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        .form-group input:focus ::-moz-input-placeholder{
+            opacity: 0;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        .form-group input:focus :-moz-input-placeholder{
+            opacity: 0;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        .form-group input:focus ::-webkit-input-placeholder{
+            opacity: 0;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+        }
+        button{
+            border-radius: 4px;
+            height: 44px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+            padding: 0 30px;
+            letter-spacing: 1px;
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-align-items: center;
+            -moz-align-item: center;
+            -ms-align-items: center;
+            align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -ms-flex-pack: center;
+            text-align: center;
+            border: none;
+            background-color: #ffeba7;
+            color: #102770;
+            box-shadow: 0 8px 24px 0 rgba(255,235,167,.2) ;
+        
+
+        }
+        button:active,
+        button:focus{
+            background-color: #102770;
+            color: #ffeba7;
+            box-shadow: 0 8px 24px 0 rgba(16,39,112,.2) ;
+
+        }
+        button:hover{
+            background-color: #102770;
+            color: #ffeba7;
+            box-shadow: 0 8px 24px 0 rgba(16,39,112,.2) ;
+
+        }
+        .logo{
+            position: absolute;
+            top: 30%;
+            right: 30%;
+            display: block;
+            z-index: 100;
+            transition: all 200ms linear;
+       }
+       .logo img{
+           height: 26px;
+           width: auto;
+           display: block;
+       }
+    </style>
+</head>
+<body>
+    <!--Login sign-up form-->
+   <div class="section">
+    <div class="container">
+        <h6 class="mb-0 pb-3"><span>Log In</span><span>Sign Up</span></h6>
+
+        <input  class="checkbox" type="checkbox" name="reg-log" id="reg-log">
+        <label for="reg-log"></label>
+        <div class=" card-3d-wrap">
+        <div class=" card-3d-wrapper">
+        <div class=" card-front">
+        <div class="center wrap">
+        <div class="section text center">
+        <h4>Log in</h4>
+
+
+    <div class="f">
+        <div class="form-group">
+            <input type="email" class="form-style" name="logemail" id="logemail" placeholder="Enter Your Email" autocomplete="off">
+            <i class="input-icon uil uil-at"></i>
+        </div>
+        <div class="form-group mt-2">
+            <input type="password" class="form-style" name="logpass" id="logpass" placeholder="Enter Password" autocomplete="off">
+            <i class="input-icon uil uil-lock-alt"></i>
+        </div>
+
+        <button>SUBMIT</button>
+
+        <p>Forget Your Password???</p>
+           </div>
+         </div>
+       </div>
+       <div class="card-back">
+       <div class="center wrap">
+        <div class="section text center">
+            <h4>Sign Up</h4>
+        <div class="form-group">
+            <input type="text" class="form-style" name="logname" id="logname" placeholder="Enter Your Name" autocomplete="off">
+            <i class="input-icon uil uil-user"></i>
+        </div>
+        <div class="form-group mt-2">
+            <input type="email" class="form-style" name="logemail" id="logemail" placeholder="Enter Your Email" autocomplete="off">
+            <i class="input-icon uil uil-at"></i>
+        </div>
+        <div class="form-group mt-2">
+            <input type="password" class="form-style" name="logpass" id="logpass" placeholder="Enter Password" autocomplete="off">
+            <i class="input-icon uil uil-lock-alt"></i>
+        </div>
+
+        <button>SUBMIT</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

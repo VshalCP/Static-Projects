@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-8(js)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .preload{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: #77b3d4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+            
+        }
+        .cloud1,.cloud2,.cloud3{
+            height: 100px;
+            position: absolute;
+            right: 0;
+            z-index: -1;
+
+
+        }
+        .preload img {
+            width: 300px;
+        }
+        .cloud1{
+            top: 25%;
+            transform: translate(100%, -25%);
+            animation: clouds 4s ease infinite;
+            
+
+        }
+        .cloud2{
+            top: 50%;
+            transform: translate(100%, -50%);
+            animation: clouds 4s ease infinite 2s;
+
+        }
+        .cloud3{
+            top: 75%;
+            transform: translate(100%, -75%);
+            animation: clouds 4s ease infinite 1s;
+
+
+        }
+        .air{
+            height: 300px;
+            width: 100px;
+            animation: air 2s ease infinite alternate;
+        }
+        .preload h3{
+            position: absolute;
+            top: 75%;
+            transform: translateY(-75%);
+            color: white;
+            font-size: 35px;
+            font-family: sans-serif;
+        }
+        .preload-finish{
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+
+        
+        section img {
+            height: 200px;
+        }
+        @keyframes air {
+            from{
+                transform: translateY(0px);
+            }
+            to{
+                transform: translateY(50px);
+            }
+            
+        }
+        @keyframes clouds {
+            0%{
+                right: 0;
+            }
+            100%{
+                right: 130%;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="preload">
+      <img class="air" src="Marvel/plane-sky.png" alt="">
+      <h3>Landing on the website!!</h3>
+      <img class="cloud1" src="Marvel/cloud.png" alt="cloud1">
+      <img class="cloud2" src="Marvel/cloud.png" alt="cloud2">
+      <img class="cloud3" src="Marvel/cloud.png" alt="cloud3">
+
+    </div>
+
+    <section>
+        <h1>Arrived</h1>
+        <img src="Marvel/sky-flight.jpg" alt="">
+    </section>
+
+    <script>
+        //Need to  make a function that get rid of preloader
+        window.addEventListener('load', () => {
+            const preload = document.querySelector('.preloader');
+            preload.classList.add('preload-finish');
+        });
+    </script>
+</body>
+</html>

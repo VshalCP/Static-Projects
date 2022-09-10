@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-16</title>
+    <!-- CSS -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: sans-serif;
+            background-color: rgb(71, 126, 158);
+        }
+
+        
+        .back{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1310px;
+            text-align: center;
+            height: 350px;
+            color: white;
+            border: 2px solid white;
+            background-color: black;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+        
+        
+        .carousel{
+            margin-top: 50px;
+            background: rgb(241, 241, 238);
+            
+            
+        }
+        .i{
+            width: 1300px;
+            height: 550px;
+        }
+        .n, .footer{
+            background: rgb(37, 34, 34);
+            display: flex;
+            justify-content: center;
+            padding: 8px 2px 8px 2px;
+            border: 2px solid rgb(252, 251, 251);
+            width: 100%;    
+            background-color: gray;
+        }
+        .n:hover, footer:hover{
+            background: rgb(12, 12, 12);
+        }
+        .n nav a, footer a{
+            padding: 12px 16px ;
+            margin-bottom: 3px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            word-spacing: 15px;
+        }
+        .n a:hover,footer a:hover{
+            color: black;
+            background: white;
+            font-size: 18px;
+            font-weight: bold;
+            word-spacing: 15px;
+        }
+        .to a{
+            border: 2px solid  black;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            word-spacing: 10px;
+            padding: 18px;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(10, 10, 10);
+
+        }
+        .to a:hover{
+            color: gray;
+            background-color: aquamarine;
+        }
+        .to {
+            width: 1400px;
+            
+            margin-top: 180px;
+            display: grid;
+            grid-gap: 22px;
+            padding: 0 ;
+            grid-template-rows: 1fr;
+            text-decoration: none;
+            color: black;
+        }
+        .to:hover{
+           /* background: linear-gradient(#f0f2f0, #000c40);*/
+            color: black;
+        }
+        input[type="radio"]{
+            width: 10%;
+        }
+        #o{ 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 37%;
+            width: 325px;
+        
+        }
+        #v{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #vi{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+           
+        
+        }
+        #vis{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+           
+        
+        }
+        #vish{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+        
+        }
+        #visha{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+        
+        }
+        #vishal{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+           
+        
+        }
+        #o:hover{
+            filter: blur(1px);
+        }
+        .ga{
+            margin-left: 300px;
+            
+        }
+        #ol{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 37%;
+            width: 320px;
+            
+        }
+        #ol:hover{
+            filter: blur(1px);
+        }
+        #oli{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 37%;
+            width: 320px;
+            height: 200px;
+        }
+        #oli:hover{
+            filter: blur(1px);
+        }
+        #oliv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 37%;
+            width: 325px;
+        }
+        #oliv:hover{
+            filter: blur(1px);
+        }
+        #olivi{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 37%;
+            width: 325px;
+            
+        }
+        #olivi:hover{
+            filter: blur(1px);
+        }
+        #olivir{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 37%;
+            height: 200px;
+            width: 330px;
+        }
+        #olivir:hover{
+            filter: blur(1px);
+        }
+        .ra{
+            margin-top: 10px;
+            margin-left: 42%;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+        h3{
+           
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        h3:hover{
+            transition: all 3s linear forwards;
+            background-color: yellow;
+            color: red;
+            
+        }
+        h2{
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        h2:hover{
+            color: black;
+            background-color: white;
+        }
+        .copyright{
+            float: right;
+            width: 100px;
+        }
+        footer {
+            padding: 10px 20px;
+            margin-top: 50px;
+            width: 1320px;
+            height: 120px;
+            
+        }
+
+        
+    </style>
+
+
+</head>
+<body>
+    <div class="back">
+        <h1 class="b">TheX'park</h1>
+    </div>
+    <div class="n">
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">FOOD-TYPES</a>
+            <a href="#">FOOD-REVIEWS</a>
+            <a href="#">CONTACT-US</a>
+            <a href="#">LOGIN/SIGNUP</a>
+        </nav>
+        </div>
+    <div class="carousel" data-flickity = '{ "wrapAround": true }'>
+        <div class="carousel-cell"> <img class="i" src="Marvel/food.jpg" alt=""></div>
+        <div class="carousel-cell"> <img class="i" src="Marvel/food-1.jpg" alt=""></div>
+        <div class="carousel-cell"> <img class="i" src="Marvel/food-2.jpg" alt=""></div>
+        <div class="carousel-cell"> <img class="i" src="Marvel/food-3.jpg" alt=""></div>
+        <div class="carousel-cell"> <img class="i" src="Marvel/food-4.jpg" alt=""></div>
+    </div>
+    <div class="to">
+    <nav>
+        <a href="" id="v">VEG</a>
+        <img id="o" src="Marvel/veg.jpg" alt="">
+       
+        <a href="" id="vi">NON-VEG</a>
+        <img id="ol" src="Marvel/non-veg.jpg" alt=""> 
+
+        <a href="" id="vis">SWEET</a>
+        <img id="oli" src="Marvel/sweet.jpg" alt="">
+
+        <a href="" id="vish">SPICY</a>
+        <img id="oliv" src="Marvel/spicy.jpg" alt="">
+
+        <a href="" id="visha">FAST-FOOD</a>
+        <img id="olivi" src="Marvel/fast.jpg" alt="">
+
+        <a href="" id="vishal">DIET-FOOD</a>
+        <img id="olivir" src="Marvel/diet.jpg" alt="">
+
+    </nav>
+    </div>
+
+    <h3>FOUNDER</h3>
+    <img class="ra" src="Marvel/sharma.jpg" alt="">
+    <h2>Just Begin My Web-Developing Journy With Some Good Skills</h2>
+
+
+    <footer>
+        <a href="href">FAQ</a>
+        <a href="href">CONTACT-US</a>
+        <a href="href">TERMS-OF-USE</a>
+        <a href="href">PRIVACY-POLICY</a>
+        <a href="href">REFUND-POLICY</a>
+        <a class="flex-align-right">&COPY; 2022 -THEEXPLORER</a>
+    </footer>
+    </footer>
+    
+    
+      
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+</html>

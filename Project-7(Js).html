@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+    integrity="sha384-UHRtZLI+pbxtHCWp1t778iL4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ81WUE00s/" crossorigin="anonymous">-->
+    <title>Project-7(Js)</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            background-color: rgba(87,189,130);
+            transition: background 0.5s ease;
+            position: relative;
+        }
+        .field-name,
+        .field-email,
+        .field-password,
+        .field-finish{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            height: 50px;
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            transition: all 0.5s ease;
+        }
+        .field-name i,
+        .field-email i,
+        .field-password i,
+        .field-finish i{
+            padding: 10px;
+            cursor: pointer;;
+        }
+        .field-name input
+        .field-email input,
+        .field-password input {
+            background: none;
+            border: none;
+            flex: 1;
+            height: 200%;
+            width: 300px;
+            outline: none;
+        }
+        div.inactive{
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+
+        }
+        div.active{
+            opacity: 1;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <div class="field-name">
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="Username" required />
+            <i class="fa fa-arrow-down"></i>
+
+        </div>
+        <div class="field-email inactive">
+            <i class="fa fa-arrow-down"></i>
+            <input type="email" placeholder="Email" required>
+            <i class="fa fa-arrow-down"></i>
+           <!-- <i class="fa fa-envelope" aria-hidden="true"></i>-->
+        </div>
+        <div class="field-password inactive">
+            <i class="fa fa-key"></i>
+            <input type="password" placeholder="password" required>
+            <i class="fa fa-arrow-down"></i>
+        </div>
+        <div class="field-finish inactive">
+            <i class="fa fa-heart"></i>
+            <p>Thank-You</p>
+        </div>
+        
+
+
+
+
+
+
+        </div>
+    </form>
+    <script>
+        function animatedForm (){
+            const arrows = document.querySelector(".fa-arrow-down");
+             
+            arrows.forEach(jod => {    //error
+                jod.addEventListener("click", () => {
+                    const  input = arrow.previouselementSibling;
+                    const parent = arrow.parentElement;
+                    const nextForm = parent.nextElementSibling;
+
+                    if(input.type === "text" && validateUser(input)){
+                        nextSlide(parent, nextForm);
+                    }else if(input.type === 'email' && validateEmail(input)){
+                        nextSlide(parent, nextForm);
+
+                    }else if(input.type === 'password' && validateUser(input)){
+                        nextSlide(parent, nextForm);
+                    }
+                    else{
+                        parent.style.animation = "shake 0.5s ease";
+                    }
+                    //get rid of animation
+                    parent.addEventListener('animationed', () => {
+                        parent.style.animation = "";
+                    })
+
+                    //check for validation
+                })
+            })
+        }
+
+        function validateUser(user){
+            if(user.value.length < 6) {
+                console.log('not enough characters');
+                error('rgb(189,87,87')
+            }else{
+                error('rgb(87,189,130)');
+                return true;
+            }
+        }
+        function validateEmail(email){
+            const validation = /^[^\s@] + @[^\s@]+\.[^\s@]+$/;
+            if(validation.test(email.value)) {
+                console.log('not enough characters');
+                error('rgb(87,189,130)');
+                return true;
+            }else{
+                error('rgb(189,87,87');
+                
+            }
+            }
+        
+
+        function nextSlide(parent, nextForm){
+            parent.classList.add('inactive');
+            parent.classList.remove('active');
+            parent.classList.add('inactive');
+        }
+        function error(color){
+            document.body.style.backgroundColor = color;
+        }
+        animatedForm();
+    </script>
+
+</body>
+</html>

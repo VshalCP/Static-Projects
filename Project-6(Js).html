@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-6(js)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+            font-family: sans-serif;
+            color: white;
+        }
+        .location , .temperature{
+            height: 30vh;
+            width: 25%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .temperature{
+            flex-direction: column;
+        }
+        .degree-section{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .degree-section span{
+            margin: 10px;
+            font-size: 30px;
+        }
+        .degree-section h2{
+            font-size: 40px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <div class="location">
+    <h1 class="location-timezone">Time zone</h1>
+    <p>Icon</p>
+    </div>
+    
+
+    <div class="temperature">
+        <div class="degree-section">
+        <h2 class="temperature-degree">34</h2>
+        <span>F</span>
+        </div>
+        <div class="temperature-description">Its friggin cold</div>
+    </div>
+    <script>
+        window.addEventListener('load', () =>{
+            let long;
+            let lat;
+
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(position => {
+                   long = position.coords.longitude;
+                   lat = position.coords.latitude;  
+
+
+                 //  const proxy = "https://cors-anywhere.herokuapp.com/";
+                  // const api = `${proxy}https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
+                  // fetch(api)
+               //.then(response => {
+                 //  return response.json();
+               //})
+               //.then(data => {
+                 //  console.log(data);
+                   //const (temperature)  = data.currently;
+               //});
+            });
+            function setIcons(icon, iconID);
+                                  //nothing happen herre link doesnt work so i am not creating this project.
+          }
+        });
+    </script>
+</body>
+</html>

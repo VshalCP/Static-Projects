@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-12</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nibba{
+            width: 1300px;
+            height: 625px;
+            background-color: white;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .road{
+            height: 180px;
+            width: 500%;
+            background-image: url(Marvel/road-2.jpg);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            animation: road 5s linear infinite;
+            
+        }
+        @keyframes road {
+            100%{
+            transform: translateX(-3200px);
+            }
+        }
+        .city{
+            height: 280px;
+            width: 500%;
+            background-image: url(Marvel/city.jpg);
+            position: absolute;
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            animation: city 20s linear infinite;
+            background-repeat: repeat-x;
+        }
+        @keyframes city {
+            100%{
+            transform: translateX(-1200px);
+            }
+        }
+        .bus {
+            width: 200px;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: -15px;
+            position: absolute;
+            z-index: 2;
+        }
+        .bus img{
+            width: 100%;
+            animation: bus 1s linear infinite;
+        }
+        @keyframes bus {
+            0% {
+                transform: translateY(-1px);
+            }
+            100% {
+                transform: translateY(1px);
+            }
+            0% {
+                transform: translateY(-1px);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="nibba">
+        <div class=road></div>
+        <div class="city"></div>
+
+
+        <div class="bus">
+            <img src="Marvel/bus.png" alt="">
+        </div>
+
+
+    </div>
+</body>
+</html>

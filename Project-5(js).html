@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-5(js)</title>
+    <style>
+        body {
+          font-family: sans-serif;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+
+        }
+        .pappu{
+          display: flex;
+          color: white;
+          
+          background:linear-gradient(rgba(24, 23, 23, 0.5), rgba(20, 20, 20, 0.5)),
+           url('Marvel/food-4.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 1500px;
+          height: 640px;
+        }
+        .typing{
+            position: relative;
+            margin-left: 10px;
+        }
+        .typing::after{
+            content: "";
+            position: absolute;
+            right: -5px;
+            width: 1px;
+            height: 5%;
+            border-right: 2px solid white;
+            animation: blink 1.2s infinite ease;
+
+        }
+        @keyframes blink {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="pappu">
+        <h1>Helllo!! i make</h1>
+        <h1 class="typing">hi</h1>
+    </div>
+    <script>
+        //const text = ["websites", "jababa","dabba","nimbba","jod"];
+        let count = 0;
+        let index = 0;
+        let currentText = ""; //specify individual text
+        let letter = "";      //specify individual letter
+
+
+        (function type(){
+         if(count === text.length){ //textlength hai apni 5  
+            count = 0;                 // we dont wanna go  with after 5
+         }
+         currentText = text[count]; //for this case ia 0
+         letter = currentText.slice(0, ++index); //means ek ek letter add karega
+         //letter = "wed"
+
+         document.querySelector('.typing').textContent = letter;
+         if(letter.length === currentText.length){ //matlab dusre word pe shift hone ka time a gaya hai
+             count++;
+             index= 0; // wapis dusre word ka pahela letter
+         }
+         setTimeout(type, 400); //run by every 4 mili seconds
+        }()); //do delete and sleep function
+
+    </script>
+</body>
+</html>

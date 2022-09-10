@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-11</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(0, 10, 10);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 50%;
+        }
+        h1{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 55px;
+            line-height: 10vh;
+            color: rgb(255, 251, 251);
+        }
+        .lol {
+            color: transparent;
+            background: conic-gradient(
+                #f0f2f0, #000c40 10%,
+                #f3904f 23%,#3b4371 23%,
+                #ef32d9 40%,#89fffd 50%,
+                #3a6186 60%,#89253e 60%,
+                #a1ffce 80%,#faffd1 80%);
+            background-size: 50%;
+            background-clip: text;
+            -webkit-background-clip: text; /*text me se color 6ut jayega*/
+            cursor: pointer;
+            animation: expand-rev 0.5s ease forwards;
+        }
+        .lol:hover{
+            animation: expand 0.5s ease forwards;
+        }
+        @keyframes expand {
+            0%{
+                background-size: 50%;
+                background-position: 0 0;
+            }
+            20% {
+                background-size: 55%;
+                background-position: 0 1em;
+            }
+            100%{
+                background-size: 325%;
+                background-position: -10em -4em;
+            }
+            
+        }
+        @keyframes expand-rev {
+            0%{
+                background-size: 325%;
+                background-position: -10em -4em;
+            }
+            20% {
+                background-size: 55%;
+                background-position: 0 1em;
+            }
+            0%{
+                background-size: 50%;
+                background-position: 0 0;
+            } 
+        }
+            
+        
+    </style>
+</head>
+<body>
+    <h1 class="lol">Sharma Vishal</h1>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch on-off</title>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        .btn {
+            padding: 20px;
+            background-color:  rgb(241, 156, 87);
+        }
+        .btn:hover {
+            background-color: cadetblue;
+        }
+        
+    </style>
+</head>
+<body style="background-color: black;">
+    <img id="bulb" src="bulbbhai/bulb-offf.jpg" alt="" class="center">
+    <button id="chalubandhBtn" class="center btn">turn on</button>
+
+
+    <script>
+        const btn = document.getElementById("chalubandhBtn")
+        const bulb = document.getElementById("bulb")
+
+        btn.addEventListener("click" , chalubandhBtn)
+
+        function chalubandhBtn(e){
+            if(btn.textContent.includes('on')){//hinclude means hai ki nahi
+                bulb.src = "bulbbhai/bulb-on.jpg"
+                btn.textContent = "Turn Off"
+            }else{bulb.src = "bulbbhai/bulb-offf.jpg"
+                btn.textContent = "Turn on"
+            } 
+                
+
+
+        }
+    </script>
+
+</body>
+</html>

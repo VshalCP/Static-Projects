@@ -1,0 +1,7 @@
+bbday/
+Birthday-gift/
+node_modules/
+package/
+package-lock/
+postcss.config/
+tailwind.config/

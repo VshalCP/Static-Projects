@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-18</title>
+    <style>
+        .box1{
+            height: 100vh;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box2{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <!--Vanilla javascript-->
+</head>
+<body>
+    <div class="box1">
+        <a class="section1" href="#">Sharma Vishal</a>
+    </div>
+    <div class="box2">
+        <a class="section2" id="sec-2" href="#">Thanks</a>
+        <img src="Marvel/dog.jpg" alt="">
+    </div>
+
+    <script>
+        function smoothScroll(target,duration){
+            var target = document.querySelector(target);
+            var targetPosition = target.getBoundingClientRect().top;
+            var startPosition = window.pageYOffset;
+            var distance = targetPosition - startPosition;
+            var startTime = null;         // go to mdn reference
+            //console.log(startPosition)
+
+            //console.log(targetPosition);
+            //console.log(target);
+        
+            function animation(currentTime){
+            if (startTime === null) startTime = currentTime
+            //console.log(startTime);
+            var timeElapsed = currentTime - startTime; //elapsed means past time
+            var run = ease(timeElapsed,startPosition,distance,duration)
+            window.scrollTo(0,run)
+            if(timeElapsed < duration) requestAnimationFrame(animation);
+            console.log("timeElapsed: " + timeElapsed +  "duration: " + duration); //duratiob fix ho gayi hai 4 sec but timr elapsed matlab 1st se 4alu hoga
+            } 
+            
+            function ease(t, b, c, d) {
+	        t /= d/2;
+	        if (t < 1) return c/2*t*t + b;
+	        t--;
+	        return -c/2 * (t*(t-2) - 1) + b;
+            };
+    
+            requestAnimationFrame(animation);
+
+        }
+        var section1 = document.querySelector(".section1");
+        var section2 = document.querySelector(".section2");
+
+        section1.addEventListener('click', function(){
+            smoothScroll(".section2",4000);
+        });
+        section2.addEventListener('click', function(){
+            smoothScroll(".section1",3000);
+        });
+        
+    </script>
+</body>
+</html>

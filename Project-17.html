@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Project-17</title>
+    <style>
+  
+    </style>
+</head>
+
+<body>
+    <div class="container bg-gray-900 h-[39rem]">
+        <div class="card absolute top-24 left-[28rem] w-96 m-auto">
+            <nav id="clock" class="jod w-auto h-44 m-auto text-sm bg-gray-400 text-black p-2">
+                <ul class="flex space-x-4 justify-between ">
+                    <li class="font-bold text-lg ">Phone</li>
+                    <li class="flex"><img class="w-6 cursor-pointer " src="search.svg" alt=""><img
+                            class=" w-6 text-white cursor-pointer " src="Marvel/iconmonstr-menu-11.svg"></li>
+                </ul>
+            </nav>
+            <div class="pappu bg-gray-400  text-black flex justify-center">
+                <h1 id="number" class="typing font-bold text-2xl  text-white ">Number is</h1>
+            </div>
+            <div class="main bg-gray-400 rounded-sm">
+            <div class="first   ">
+                <ul class="flex text-black text-3xl  justify-center font-bold space-x-10 ">
+                <li id="first" onclick="check()" class="cursor-pointer">1</li>
+                <li id="second" onclick="check1()"  class="cursor-pointer">2</li>
+                <li id="third"  class="cursor-pointer">3</li>
+            </ul>
+            </div>
+            <div class="second mt-2  ">
+            <ul class="flex text-black text-3xl justify-center font-bold space-x-10">
+                <li id="four"  class="cursor-pointer">4</li>
+                <li id="five"  class="cursor-pointer">5</li>
+                <li id="six"  class="cursor-pointer">6</li>
+            </ul>
+            </div>
+            <div class="third mt-2 ">
+            <ul class="flex text-black text-3xl justify-center font-bold space-x-10">
+                <li id="seven"  class="cursor-pointer">7</li>
+                <li id="eight"  class="cursor-pointer">8</li>
+                <li id="nine"  class="cursor-pointer">9</li>
+            </ul>
+            </div>
+            <div   class="four mt-2 ">
+            <ul class="flex text-black text-3xl justify-center font-bold space-x-10">
+                <li id="star"  class="cursor-pointer">*</li>
+                <li id="zero"  class="cursor-pointer">0</li>
+                <li id="hash"  class="cursor-pointer">#</li>
+            </ul>
+            </div>
+
+
+            <div>
+                <img class="w-14 m-auto cursor-pointer mt-2" src="Marvel/iconmonstr-phone-8.svg" alt="">
+            </div>
+            <div>
+            <ul class="last flex justify-between space-x-10 mt-10 font-bold text-2xl">
+                <li class="hover:underline cursor-pointer">Keypad</li>
+                <li class="hover:underline cursor-pointer">Recents</li>
+                <li class="hover:underline cursor-pointer" >Contacts</li>
+            </ul>
+
+            </div>
+        </div>
+
+        </div>
+    </div>
+    <script>
+        const text = [""];
+        let count = 0;
+        let index = 0;
+        let currentText = ""; //specify individual text
+        let letter = "";      //specify individual letter
+
+
+        (function type(){
+         if(count === text.length){ //textlength hai apni 5  
+            count = 0;                 // we dont wanna go  with after 5
+         }
+         currentText = text[count]; //for this case ia 0
+         letter = currentText.slice(0, ++index); //means ek ek letter add karega
+         //letter = "wed"
+
+         document.querySelector('.typing').textContent = letter;
+         if(letter.length === currentText.length){ //matlab dusre word pe shift hone ka time a gaya hai
+             count++;
+             index= 0; // wapis dusre word ka pahela letter
+         }
+         setTimeout(type, 400); //run by every 4 mili seconds
+        }()); //do delete and sleep function
+
+    let number = document.getElementById("number");
+    number.innerText = "";
+        let input = 
+
+        check = () => {
+            let userValue = document.getElementById("first").value;
+         //   userValue.addEventListener('click', showMsg);
+            if(id="first"){
+              //  function shoeMsg(){
+                   number.innerText = "1"
+            }
+        }
+        check1 = () => {
+            let userValue = document.getElementById("first").value;
+         //   userValue.addEventListener('click', showMsg);
+            if(id="second"){
+              //  function shoeMsg(){
+                   number.innerText = "2"
+            }
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

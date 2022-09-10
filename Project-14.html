@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-14</title>
+    <style>
+        .container{
+            font-size: 25px;
+            background-color: darkseagreen;
+            padding: 34px;
+            border: 2px solid gray;
+            text-align: center;
+        }
+        #time{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock" class="container">
+        <span id="time"></span>
+    </div>
+    <script>
+     /*   console.log("Time is")
+        let now= new Date();      // agr me date me value dalta hu to vo batayega ki date kab define hui thi
+        console.log(now)*/
+      //  let newDate = new Date( year, months, date, hours, minuts, seconds,miliseconds)
+//let newDate = new Date(2022, 4 , 6, 9, 3, 2, 34)
+    // let newDate = new Date("2029-09-30")
+    //console.log(newDate)
+
+   // let yr = newDate.getFullYear();
+    //console.log("The year is ", yr)
+
+//let dt = newDate.getDate();
+//console.log("The date is ", dt)
+
+//let month = newDate.getMonth();
+//console.log("The month is ", month)
+
+//let hours = newDate.getHours();
+    //console.log("The hours ", hours)
+
+   // let dy = newDate.getDay();
+    //console.log("The day is", dy)
+
+    setInterval(currentTime, 1000);
+
+    function currentTime(){
+        var time = new Date();
+        let hrs = time.getHours();
+        let min = time.getMinutes();
+        let sec = time.getSeconds();
+        var en = 'AM';
+
+        if(hrs> 12){
+            hrs = 'PM';
+        }
+
+
+        if(hrs > 24){
+            hrs = hrs - 24;
+        }
+
+        if(hrs == 0){
+            hrs = 24;
+        }
+        if(hrs < 10){
+            hrs = '0'+ hrs;
+        }
+        if(min < 10){
+            min = '0'+ min;
+        }
+        if(sec < 10){
+            sec = '0'+ sec;
+        }
+        document.getElementById("clock").innerHTML = hrs + ':' + min + ':' + sec + '' + en;
+
+        
+    }
+
+
+
+
+    </script>
+</body>
+</html>

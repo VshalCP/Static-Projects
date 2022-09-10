@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-15</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section {
+            height: 100vh;
+            background: #000;
+        }
+        h1{
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            letter-spacing: 7px;
+            width: 100%;
+            text-align: center;
+            color: #ddd;
+            font-size: 20px;
+            font-family: sans-serif;
+            z-index: 2;
+        }
+        h1 span{
+            display: inline-block;
+            animation: animated 1s linear forwards;
+        }
+        @keyframes animated {
+            0%{
+                opacity: 0;
+                transform: rotateY(90deg);
+                filter: blur(10px);
+                color: rgb(105, 101, 101);
+            }
+            100%{
+                opacity: 1;
+                transform: rotateY(0deg);
+                filter: blur(0);
+            }
+        }
+        .i{
+            width: 1300px;
+            height: 730px;
+            z-index: 1;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            /*animation: gum 8s linear infinite;*/
+            border: none;
+        }
+        @keyframes gum {
+            0%{
+                transform: translateX(0px);
+            }
+            100%{
+                transform: translateX(1300px);
+            }
+            
+        }
+        h1 :nth-child(1){
+            animation-delay: 1s;
+        }
+        h1 :nth-child(2){
+            animation-delay: 1.5s;
+        }
+        h1 :nth-child(3){
+            animation-delay: 2s;
+        }
+        h1 :nth-child(4){
+            animation-delay: 2.5s;
+        }
+        h1 :nth-child(5){
+            animation-delay: 3s;
+        }
+        h1 :nth-child(6){
+            animation-delay: 3.5s;
+        }
+        h1 :nth-child(7){
+            animation-delay: 4s;
+        }
+        h1 :nth-child(8){
+            animation-delay: 4.5s;
+        } 
+         h1 :nth-child(9){
+            animation-delay: 5s;
+        }
+        h1 :nth-child(10){
+            animation-delay: 5.5s;
+        }
+        h1 :nth-child(11){
+            animation-delay: 6s;
+        }
+        h1 :nth-child(12){
+            animation-delay: 6.5s;
+        }
+       
+    </style>
+</head>
+<body>
+    <section>
+        <video class="i" src="Marvel/final.mp4" autoplay muted></video>
+
+    <h1><span>V</span>
+        <span>I</span>
+        <span>S</span>
+        <span>H</span>
+        <span>A</span>
+        <span>L</span>
+
+        <span>S</span>
+        <span>H</span>
+        <span>A</span>
+        <span>R</span>
+        <span>M</span>
+        <span>A</span>
+        
+    </h1>
+    </section>
+</body>
+</html>

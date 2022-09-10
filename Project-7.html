@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-7</title>
+    <style>
+        /*css portion*/
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(16, 31, 31);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+        }
+        .n, .v {
+            margin: 7px;
+        
+        }
+        button {
+            margin-bottom: 5px;
+        }
+        input {
+            text-decoration: none;
+        }
+        .n {
+            text-decoration: line-through;
+            font-weight: bold;
+            padding: 0px;
+            border:none;
+            text-align: center;
+            background-color: rgb(243, 247, 240);
+            outline: none;
+            border-radius: 7px;
+            font-size: 15px;
+            text-shadow: 3px;
+
+        }
+        #sharma:hover{
+            color: violet;
+        }
+        .v {
+            border: 2px solid black;
+            font-size: 12px;
+            border-radius: 4px;
+            outline: none;
+            text-align: center;
+            padding: 0px 0px;
+        }
+        button {
+            color: rgb(22, 18, 13);
+            font-size: 12px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 3px;
+            position: relative;
+            padding: 3px 3px;
+            letter-spacing: 2px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 2px solid rgb(75, 244, 250);
+            background: linear-gradient(to right,rgba(57, 202, 108, 0.719)1%
+                                        transparent 40%);
+            box-shadow: inset 0 0 10px rgba(142, 230, 9, 0.973);    
+        }
+        button:hover{
+            color: rgb(249, 247, 252);
+            background-color: rgb(14, 14, 8);
+            box-shadow: inset 0 0 10px rgba(193, 245, 114, 0.514),0 3px 9px rgba(193, 245, 114, 0);    
+        
+        }
+        button:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70px;
+            height: 100%;
+            transition: transform 0.4s ease-in-out;
+            background: linear-gradient(to right,rgba(14, 247, 96, 0.705)1%
+                                        transparent 40%);
+        }
+        button:hover::before{
+            transform: translateX(35px);
+        }
+    </style>
+</head>
+<body onload="generate()">
+    <!--html portion-->
+    <div class="container"></div>
+        <h2 id="sharma">Captcha Generator</h2>
+        <div class="n">
+            <input type="text" readonly id="generated-captcha">
+        </div>
+        <div class="v">
+            <input type="text" id="entered-captcha" placeholder="Enter The Captcha...">
+        </div>
+        <button type="button" onclick="check()">Check</button>
+        <button type="button" onclick="generate()">Generate</button>
+
+
+
+
+    <!--javascript portion-->
+        <script>
+         let captcha;
+         let alphabets = "AaBbCcDdEeFfEeGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+         let sharma = document.getElementById("sharma")
+         sharma.innerText = "Captcha Generator";
+         generate = () => {
+            let first = alphabets[Math.floor(Math.random() * alphabets.length)];
+            let second = alphabets[Math.floor(Math.random() * alphabets.length)];
+            let third = Math.floor(Math.random() * 10);
+            let fourth = Math.floor(Math.random() * 10);
+            let five = alphabets[Math.floor(Math.random() * alphabets.length)];
+            let six = Math.floor(Math.random() * 10);
+            captcha = first.toString()+second.toString() + third.toString() + fourth.toString() + five.toString() + six.toString();
+            document.getElementById("generated-captcha").value = captcha;
+            document.getElementById("entered-captcha").value = "";
+            sharma.innerText = "Captcha Generator";
+            //console.log(captcha
+         }
+
+            check = () => {
+                let userValue = document.getElementById("entered-captcha").value;
+                console.log(captcha);
+                console.log(userValue);
+                if(userValue == captcha){
+                    sharma.innerText = "Correct!!"
+                }else{
+                    sharma.innerText = "Try Again!!"
+                    document.getElementById("entered-captcha").value = "";
+                }
+            }
+
+
+        
+        </script>   
+</body>
+</html>

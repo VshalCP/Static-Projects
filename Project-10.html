@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-10</title>
+    <style>
+        body {
+            color: white;
+            margin: 0;
+            padding: 0;
+            background: url('Marvel/gym.jpg');
+            
+        }
+        .left {
+            position: absolute;
+            color: white;
+            display: block;
+            top: 20px;
+            left: 34px;
+            border: rgb(17, 17, 17);
+
+        }
+        img {
+            width: 100px;
+        }
+        .mid {
+            color: white;
+            display: block;
+            width: 49%;
+            margin: 20px auto;
+            border: 2px solid rgb(133, 122, 122);
+            /*background: linear-gradient(#f0f2f0,#000c40);*/
+
+        }
+        .right {
+            display: inline-block;
+            position: absolute;
+            color: white;
+           /* background:linear-gradient(#bdc3c7,#2c3e50);*/
+            top: 0px;
+            right: 20px;
+        }
+        
+        .navbar {
+            display: inline-block;
+            
+        }
+        .navbar li {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: bold;
+            
+        }
+        .navbar li a{
+            text-decoration: none;
+            padding: 24px 20px;
+            color: white;
+        }
+        .navbar li a:hover, .navbar li a::before {
+            text-decoration: underline;
+            color: gray;
+
+        }
+        .right li {
+            font-size: 15px;
+        }
+        button{
+            margin: 0 15px;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 1px 4px;
+            color: white;
+            background:linear-gradient(rgb(19, 12, 12),rgb(161, 153, 153));
+            /*background:linear-gradient(#bdc3c7,#2c3e50);*/
+            border:2px solid gray;
+            border-radius: 6px;
+            cursor: pointer;
+        
+        }
+        p{
+            font-weight: bold;
+
+        }
+        p:hover{
+            color: dimgrey;
+        }
+        button:hover{
+
+            color: rgb(58, 38, 38);
+            
+        }
+        .container{
+            margin: 120px 90px;
+            border: 2px solid white;
+            padding: 25px;
+            border-radius: 18px;
+            width: 470px;
+            text-align: center;
+            height: 300px;
+        }
+        .form-group input{
+            text-align: center;
+            display: block;
+            width: 378px;
+            padding: 6px;
+            border-radius: 10px;
+            border: 2px solid rgb(253, 252, 252);
+            margin: 5px auto;
+            font-weight: bold;
+        }
+        .btn {
+            color: black;
+            margin: 7px;
+            width: 220px;
+            border:2px solid cadetblue;
+        }
+        .btn:hover {
+            color: rgb(161, 154, 154);
+            background:linear-gradient(#000428, #004e92)
+        }
+        .container h1:hover{
+            text-decoration: underline;
+            color: dimgrey;
+        }
+        @media (max-width:720px){
+            .mid {
+                margin-left: 210px;
+            }
+            .navbar {
+                width: 250px;
+            }
+            .navbar li a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                display: block;
+                width: 200px;
+                font-size: 15px;
+            }
+            .left{
+               /* position: fixed;*/
+                width: 20px;
+            }
+            .right{
+                position: fixed;
+            }
+            .container{
+                font-size: 15px;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                flex-direction: column;
+                margin-right: 20px;
+                right: 30px;
+            
+                
+            
+            }
+        }
+        @media (max-width:420px) {
+            .mid {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-direction: row;
+                align-content: center;
+                font-size: 10px;
+                width: 180px;
+            }
+        }
+        .fact img{
+            width: 430px;
+            display: block;
+            top: 50%;
+            left: 50%;
+            margin:0px auto ;
+
+        }
+        .fact1 img{
+            width: 430px;
+            display: block;
+            top: 50%;
+            left: 50%;
+            margin: 30px auto ;
+
+        }
+        .fact2 img{
+            width: 430px;
+            display: block;
+            top: 50%;
+            left: 50%;
+            margin: 30px auto ;
+
+        }
+        .fact3 img{
+            width: 430px;
+            display: block;
+            top: 50%;
+            left: 50%;
+            margin: 30px auto ;
+
+        }
+        .fact4 img{
+            width: 430px;
+            display: block;
+            top: 50%;
+            left: 50%;
+            margin: 30px auto ;
+
+        }
+        .fact5 img{
+            width: 430px;
+            display: block;
+            top: 50%;
+            left: 50%;
+            margin: 30px auto ;
+
+        }
+        .fact6 img{
+            width: 430px;
+            display: block;
+            top: 50%;
+            left: 50%;
+            margin: 30px auto ;
+
+        }
+        .fact,.fact1,.fact2,.fact3,.fact4,.fact5,.fact6 p{
+            text-align: center;
+            font-size: 22px;
+        }
+
+
+
+    
+        
+    </style>
+</head>
+<body>
+
+    <header class="header">
+
+        <div class="left">
+            <img src="Marvel/glogo.jpg" alt="">
+            <p>VIsHaL'XpArRK</p>
+        </div>
+
+        <div class="mid">
+            <ul class="navbar">
+           <li><a href="" id="1" onclick="check()" >HOME</a></li>
+           <li><a href="" id="2" onclick="chel()">GYM COUNTER</a></li>
+           <li><a href="" id="3" onclick="chev()">GYM EQUIPMENTS</a></li>
+           <li><a href=""id="4" onclick="cheo()">ABOUT US</a></li>
+            </ul>
+        </div>
+
+        <div class="right">
+            
+                <li>
+                    <button id="5" onclick="che()">HELP</button>
+                    <button id="6" onclick="ch()">EMAIL US</button>
+                </li>
+            
+        </div>
+        <div class="container">
+              <h1> Join HUrry Up!!</h1>
+              <form action="noaction.php">
+                <div class="form-group">
+                  <input type="text" name="" placeholder="Enter Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="" placeholder="Enter Your Age">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="Enter Your Gender">
+                  </div>
+                <div class="form-group">
+                    <input type="email" name="" placeholder="abcd@gmail.com">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="" placeholder="1-2-3-4-5-6-7-8-9-0">
+                </div>
+                <button class="btn">Submit</button>
+              </form>
+        </div>
+    </header>
+    <div class="fact">
+        <p>1</p>
+        <img src="Marvel/workout-1.jpg" alt="photo of workout">
+
+    </div>
+    <div class="fact1">
+        <p>2</p>
+        <img src="Marvel/workout-2.jpg" alt="photo of workout">
+    </div>
+
+    <div class="fact2">
+        <p>3</p>
+        <img src="Marvel/workout-3.jpg" alt="photo of workout">
+    </div>
+
+    <div class="fact3">
+        <p>4</p>
+        <img src="Marvel/workout-4.jpg" alt="photo of workout">
+    </div>
+
+    <div class="fact4">
+        <p>5</p>
+        <img src="Marvel/workout-5.jpg" alt="photo of workout">
+    </div>
+
+    <div class="fact5">
+        <p>6</p>
+        <img src="Marvel/workout-6.jpg" alt="photo of workout">
+    </div>
+
+    <div class="fact6">
+        <p>7</p>
+        <img src="Marvel/workout-7.jpg" alt="photo of workout">
+    </div>
+</body>
+</html>

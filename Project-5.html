@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-5</title>
+    <style>
+        * {
+            background: rgb(222, 231, 238);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .jod {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(253, 247, 247);
+        }
+        .jod ul{
+            display: flex;
+            border: 10px solid white;
+        }
+        .jod ul li {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+            list-style: none;
+            margin: 0 10px;
+            animation: bouncy 1s linear infinite;
+
+        }
+        @keyframes bouncy {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-150px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+            
+        }
+
+        ul li:nth-child(1){
+            animation-delay: 0.2s;
+            background-color: rgba(52,142,226);
+        }
+        ul li:nth-child(2){
+            animation-delay: 0.8s;
+            background-color: rgb(255, 0, 242);
+        }
+        
+        ul li:nth-child(4){
+            animation-delay: 0.6s;
+            background-color: rgb(241, 106, 16);
+        }
+        ul li:nth-child(3){
+            animation-delay: 0.1s;
+            background-color: rgb(4, 0, 255);
+        }
+      
+        ul li:nth-child(5){
+            animation-delay: 0.7s;
+            background-color: rgb(255, 0, 0);
+        }
+        ul li:nth-child(6){
+            animation-delay: 0.5s;
+            background-color: rgb(236, 240, 35);
+        }
+       
+            ul li:nth-child(7){
+            animation-delay: 0.4s;
+            background-color: rgb(83, 191, 224);
+        }
+         
+        
+    
+        .container {
+            background: rgb(240, 248, 248);
+            position: absolute;
+            transform: translate(-50%,-50%);
+            display: flex;
+            top: 50%;
+            left: 50%;
+        
+            /*word-spacing: 15px;*/
+            /*justify-content: center;*/
+    
+        }
+        .container a{
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: block;
+            margin: 10px;
+            background: rgb(238, 241, 240);
+            text-align: center;
+            line-height: 120px;
+            /*color: rgb(0, 0, 0);*/
+            font-size: 32px;
+        }
+        .f {
+            color: rgb(52, 142, 226);
+        }
+        .g {
+            color: rgb(34, 78, 221);
+        }
+        .y {
+            color: red;
+        }
+        .t {
+            color: rgb(87, 191, 240);
+        }
+        .container a:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 125px;
+            height: 125px;
+            border: 4px solid white;
+            transition: .3s;
+           
+        }
+        
+        .container a:hover::before {
+            border-color: rgb(65, 248, 65);
+        }
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="Marvel/v.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="Marvel/v.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="Marvel/v.jpg">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="jod">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="container">
+        <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer" class="f"><i class="fa fa-facebook"></i>Facebook</a>
+        <a href="http://www.google.com" target="_blank" rel="noopener noreferrer" class="g"><i class="fa fa-google"></i>Google</a>
+        <a href="http://www.Youtube.com" target="_blank" rel="noopener noreferrer" class="y"><i class="fa fa-youtube"></i>Youtube</a>
+        <a href="http://www.twitter.com" target="_blank" rel="noopener noreferrer" class="t"><i class="fa fa-twitter"></i>Twitter</a>
+    </div>
+</body>
+</html>
